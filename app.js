@@ -37,5 +37,5 @@ app.get('/test2', function (req, res) {
 
 // 3. 로컬 서버로만 동작
 app.listen(PORT, function () {
-  console.log(`Listening on port ${PORT}! http://localhost:${PORT}`);
+  console.log(`Listening on port ${PORT}!`);
 });
