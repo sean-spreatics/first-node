@@ -18,12 +18,6 @@ app.use('/views', express.static(__dirname + '/views')); // ejs 파일을 저장
 app.use('/static', express.static(__dirname + '/static'));
 // 만약, 어떤 사람이 ip:port/static/img/cat.jpg 로 접근하면 해당 파일을 ip:port/static/img/cat.jpg 에 존재하는지 찾는다.
 
-// 404 에러 페이지 로드
-app.use(function (req, res, next) {
-  // res.status(404).send('404');
-  res.status(404).render('404');
-});
-
 // Routing
 // 요청과 요청 경로를 설정
 // / 경로 접속시 'hello express' 메세지 띄우기
@@ -39,6 +33,12 @@ app.get('/test', function (req, res) {
 
 app.get('/test2', function (req, res) {
   res.render('test2');
+});
+
+// 404 에러 페이지 로드
+app.use(function (req, res, next) {
+  // res.status(404).send('404');
+  res.status(404).render('404');
 });
 
 // 3. 로컬 서버로만 동작
